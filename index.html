@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI 智能对话助手，提供深度学习和人工智能应用服务">
+    <meta name="keywords" content="AI助手,人工智能,深度学习,智能对话">
+    <title>个人 AI 助手网站</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- 核心样式 -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- 第三方样式 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <link rel="stylesheet" href="css/chat.css">
+</head>
+<body class="dark-theme">
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <div class="brand-logo">
+                <span class="logo-icon"><i class="fas fa-robot"></i></span>
+                <span class="brand-name">AI 拥抱世界</span>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="#home" class="active">首页</a>
+            <a href="#chat-container">AI对话</a>
+            <a href="#projects">项目</a>
+        </div>
+        <div class="nav-auth">
+            <button class="auth-btn login">登录</button>
+            <button class="auth-btn signup">注册</button>
+            <div class="user-info" style="display: none;">
+                <span class="username"></span>
+                <button class="auth-btn logout">退出</button>
+            </div>
+            <button class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 主标题区域 -->
+    <div class="chat-section" id="home">
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="highlight">智能助手</span></h1>
+            <p class="tagline">AI 智能对话 | 深度学习 | 人工智能应用</p>
+            
+            <!-- 添加特性展示 -->
+            <div class="features">
+                <div class="feature-item">
+                    <i class="fas fa-brain"></i>
+                    <h3>深度学习</h3>
+                    <p>基于先进的深度学习模型</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-comments"></i>
+                    <h3>智能对话</h3>
+                    <p>自然流畅的对话体验</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI 助手</h3>
+                    <p>24小时随时待命</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 添加登录提示遮罩 -->
+        <div class="login-overlay" style="display: none;">
+            <div class="login-message">
+                <i class="fas fa-lock"></i>
+                <h3>请先登录</h3>
+                <p>登录后即可使用所有功能</p>
+                <button class="auth-btn login">立即登录</button>
+            </div>
+        </div>
+
+        <!-- 聊天界面 -->
+        <div class="chat-container" id="chat-container">
+            <div class="chat-header">
+                <h3>AI 助手对话</h3>
+                <div class="chat-stats">
+                    <span class="stat-item">
+                        <i class="fas fa-bolt"></i>
+                        实时响应
+                    </span>
+                    <span class="stat-item">
+                        <i class="fas fa-shield-alt"></i>
+                        安全对话
+                    </span>
+                </div>
+            </div>
+            <div class="chat-messages"></div>
+            <div class="chat-input">
+                <textarea placeholder="输入消息，与AI助手开始对话..."></textarea>
+                <button class="send-message">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <section class="grid-layout" id="projects">
+            <!-- 大型展示卡片 -->
+            <div class="grid-card showcase" id="multimedia">
+                <div class="carousel">
+                    <div class="carousel-items">
+                        <div class="carousel-item active" data-index="0">
+                            <img src="images/multimedia-design.jpg" alt="多媒体设计" loading="lazy">
+                            <div class="carousel-caption">
+                                <h4>多媒体应用设计</h4>
+                                <p>创新的数字媒体解决方案</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-index="1">
+                            <img src="images/education-tech.jpg" alt="教育科技" loading="lazy">
+                            <div class="carousel-caption">
+                                <h4>在线教育平台</h4>
+                                <p>数字学习体验设计</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-index="2">
+                            <img src="images/interactive-media.jpg" alt="交互媒体" loading="lazy">
+                            <div class="carousel-caption">
+                                <h4>交互式媒体设计</h4>
+                                <p>创造沉浸式用户体验</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="prev" aria-label="上一张"><i class="fas fa-chevron-left"></i></button>
+                        <button class="next" aria-label="下一��"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button class="indicator active" data-index="0" aria-label="第1张图片"></button>
+                        <button class="indicator" data-index="1" aria-label="第2张图片"></button>
+                        <button class="indicator" data-index="2" aria-label="第3张图片"></button>
+                    </div>
+                </div>
+                <div class="showcase-header">
+                    <div>
+                        <h3>个人项目展示</h3>
+                        <p>探��我的最新项目和品集</p>
+                    </div>
+                    <button class="learn-more" onclick="location.href='#multimedia'" aria-label="了解更多项目详情">
+                        <span>了解更多</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 视频展示 -->
+            <div class="grid-card video-showcase">
+                <h3>视频展示</h3>
+                <div class="video-carousel">
+                    <div class="video-container active" data-index="0">
+                        <video preload="metadata" playsinline webkit-playsinline>
+                            <source src="mp4/1.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-info">
+                            <h4>AI 助手演示</h4>
+                        </div>
+                    </div>
+                    <div class="video-container" data-index="1">
+                        <video preload="metadata" playsinline webkit-playsinline>
+                            <source src="mp4/2.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-info">
+                            <h4>功能展示</h4>
+                        </div>
+                    </div>
+                    <div class="video-container" data-index="2">
+                        <video preload="metadata" playsinline webkit-playsinline>
+                            <source src="mp4/3.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-info">
+                            <h4>使用教程</h4>
+                        </div>
+                    </div>
+
+                    <!-- 轮播控制 -->
+                    <div class="carousel-controls">
+                        <button class="prev-video" aria-label="上一个视频">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="video-indicators">
+                            <button class="indicator active" data-index="0"></button>
+                            <button class="indicator" data-index="1"></button>
+                            <button class="indicator" data-index="2"></button>
+                        </div>
+                        <button class="next-video" aria-label="下一个视频">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 底部大卡片 -->
+            <div class="grid-card full-width">
+                <h3>新项目展示</h3>
+                <div class="project-details">
+                    <div class="detail-section">
+                        <h4>问题背景</h4>
+                        <p>讨论 AI 驱动的开发辅助工具，提升开发效率</p>
+                    </div>
+                    <div class="detail-section">
+                        <h4>解决方案</h4>
+                        <p>基于大语言模型开发智能编程助手，��供代码建议和优化方案</p>
+                    </div>
+                    <div class="detail-section">
+                        <h4>技术选择</h4>
+                        <p>Python + React + OpenAI API</p>
+                    </div>
+                </div>
+                <a href="#" class="project-link">查看项目详情 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <!-- 悬浮对话按钮 -->
+    <button class="chat-toggle">
+        <i class="fas fa-comments"></i>
+    </button>
+
+    <!-- 底部社交链接 -->
+    <footer class="social-links">
+        <a href="https://v.douyin.com/iUR4a8be/" target="_blank" title="抖音" aria-label="访问抖音主页">
+            <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://www.xiaohongshu.com/user/profile/657151f30000000019012092" target="_blank" title="小红书" aria-label="访问小红书主页">
+            <i class="fas fa-book-open"></i>
+        </a>
+        <a href="https://b23.tv/coBZ4J9" target="_blank" title="哔哩哩哩" aria-label="访问哔哩哔哩主页">
+            <svg class="bilibili-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M777.514667 131.669333a53.333333 53.333333 0 0 1 0 75.434667L728.746667 255.829333h49.92A160 160 0 0 1 938.666667 415.829333v320a160 160 0 0 1-160 160H245.333333A160 160 0 0 1 85.333333 735.829333v-320a160 160 0 0 1 160-160h49.749334L246.4 207.104a53.333333 53.333333 0 1 1 75.392-75.434667l113.152 113.152c3.370667 3.370667 6.186667 7.04 8.448 10.965334h137.088c2.261333-3.925333 5.077333-7.594667 8.448-10.965334l113.152-113.152a53.333333 53.333333 0 0 1 75.434667 0z m1.152 231.253334H245.333333a53.333333 53.333333 0 0 0-53.333333 53.333333v320a53.333333 53.333333 0 0 0 53.333333 53.333333h533.333334a53.333333 53.333333 0 0 0 53.333333-53.333333v-320a53.333333 53.333333 0 0 0-53.333333-53.333333zM341.333333 469.333333a53.333333 53.333333 0 1 1 0 106.666667 53.333333 53.333333 0 0 1 0-106.666667z m341.333334 0a53.333333 53.333333 0 1 1 0 106.666667 53.333333 53.333333 0 0 1 0-106.666667z" fill="currentColor"></path>
+            </svg>
+        </a>
+        <a href="https://v.kuaishou.com/7j4Hia" target="_blank" title="快手" aria-label="访问快手主页">
+            <i class="fas fa-play-circle"></i>
+        </a>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/video-carousel.js"></script>
+    <script src="js/video-player.js"></script>
+    <script src="js/auth-check.js"></script>
+</body>
+</html> 
